@@ -3,9 +3,10 @@
 
 #include <stdio.h>
 
+#define MAX_NUMBERS 4
+
 int main()
 {
-  const int MAX_NUMBERS = 4;
   int sum = 0, index = 0, max = 0, numbers[MAX_NUMBERS];
 
   do
