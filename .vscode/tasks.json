@@ -11,8 +11,7 @@
         "${fileDirname}/include/*.c",
         "-lm",
         "-o",
-        "${fileDirname}/output/${fileBasenameNoExtension}",
-        "2>/dev/null"
+        "${fileDirname}/output/${fileBasenameNoExtension}"
       ],
       "options": {
         "cwd": "${fileDirname}/output"
