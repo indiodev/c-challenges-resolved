@@ -34,7 +34,7 @@ int main()
 
   x[0] = (-b + sqrt(delta)) / (2 * a);
   x[1] = (-b - sqrt(delta)) / (2 * a);
-  printf("Esta equação possui duas raízes reais: %.2f e %.2f", x[0], x[1]);
+  printf("Esta equação possui duas raízes reais: %.2f e %.2f\n", x[0], x[1]);
 
   return 0;
 }

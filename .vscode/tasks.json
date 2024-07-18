@@ -8,9 +8,11 @@
         "-fdiagnostics-color=always",
         "-g",
         "${file}",
+        "${fileDirname}/include/*.c",
         "-lm",
         "-o",
-        "${fileDirname}/output/${fileBasenameNoExtension}"
+        "${fileDirname}/output/${fileBasenameNoExtension}",
+        "2>/dev/null"
       ],
       "options": {
         "cwd": "${fileDirname}/output"

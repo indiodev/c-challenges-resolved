@@ -1,18 +1,6 @@
-// Desenvolver um algoritmo leia o mes e ano e mostre quantos dias ele tem
 #include <stdio.h>
-#include <stdbool.h>
-#include <string.h>
 
-typedef struct
-{
-  char name[10];
-  int days;
-} Mes;
-
-#define MAX_MONTHS 12
-
-_Bool monthIsValid(char month[10]);
-Mes *getMonth(char month[10]);
+#include "include/util.h"
 
 Mes months[MAX_MONTHS] = {
     {"janeiro", 31},
@@ -48,7 +36,7 @@ int main()
     months[1].days = 29;
   }
 
-  _Bool isValidMonth = monthIsValid(mes);
+  _Bool isValidMonth = monthIsValid(mes, months);
 
   if (!isValidMonth)
   {
@@ -56,7 +44,7 @@ int main()
     return 0;
   }
 
-  Mes *found = getMonth(mes);
+  Mes *found = getMonth(mes, months);
 
   if (found == NULL)
   {
@@ -67,22 +55,4 @@ int main()
   printf("O mês %s do ano %d tem %d dias\n", found->name, year, found->days);
 
   return 0;
-}
-
-_Bool monthIsValid(char month[10])
-{
-  for (int index = 0; index < MAX_MONTHS; index++)
-    if (strcmp(month, months[index].name) == 0)
-      return true;
-
-  return false;
-}
-
-Mes *getMonth(char month[10])
-{
-  for (int index = 0; index < MAX_MONTHS; index++)
-    if (strcmp(month, months[index].name) == 0)
-      return &months[index];
-
-  return NULL;
 }
